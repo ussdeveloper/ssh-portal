@@ -10,45 +10,143 @@ npm install
 
 # SSH Portal
 
-SSH Portal to narzędzie CLI umożliwiające wykonywanie poleceń na zdalnych serwerach przez SSH. Pozwala na szybkie zarządzanie wieloma połączeniami i automatyzację zadań administracyjnych.
+A powerful CLI tool for executing commands on remote servers via SSH. Streamlines remote server management with support for multiple connections and automated administrative tasks.
 
-## Funkcje
-- Wykonywanie poleceń na zdalnych hostach przez SSH
-- Obsługa wielu połączeń i konfiguracji
-- Prosta konfiguracja przez plik lub parametry CLI
-- Możliwość budowania aplikacji do postaci binarnej (Windows)
+## Features
 
-## Szybki start
-1. Zainstaluj zależności:
+- Execute commands on remote hosts via SSH
+- Support for multiple connections and configurations
+- Simple configuration via file or CLI parameters
+- Binary build support for Windows deployment
+- Secure connection management with configurable authentication
+- Cross-platform compatibility
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/ussdeveloper/ssh-portal.git
+   cd ssh-portal
+   ```
+
+2. Install dependencies:
    ```bash
    npm install
    ```
-2. Uruchom narzędzie:
-   ```bash
-   npm start -- --host <host> --user <user> --password <haslo> [--port <port>]
-   ```
-3. Zbuduj wersję binarną (Windows):
-   ```bash
-   npm run build
-   ```
-   Plik wykonywalny pojawi się w katalogu `dist/`.
 
-## Skrypty npm
-- `npm start` – uruchamia aplikację w trybie produkcyjnym
-- `npm run dev` – uruchamia aplikację w trybie deweloperskim
-- `npm run build` – buduje aplikację do pliku EXE (Windows, wymaga `pkg`)
+## Usage
 
-## Konfiguracja
-Możesz podać dane połączenia przez parametry CLI lub plik konfiguracyjny (`src/config-manager.js`).
+### Command Line Interface
 
-**Uwaga:** Domyślne hasło w konfiguracji to `changeme` – zmień je przed użyciem w środowisku produkcyjnym!
+```bash
+# Basic usage
+npm start -- --host <hostname> --user <username> --password <password> [--port <port>]
 
-## Wymagania
-- Node.js >= 20
-- Windows (dla wersji EXE)
+# Example
+npm start -- --host example.com --user admin --password mypassword --port 22
+```
 
-## Licencja
-MIT
+### Available Options
+
+- `--host, -h`: SSH hostname or IP address (required)
+- `--user, -u`: SSH username (required)
+- `--password, -p`: SSH password (required)
+- `--port`: SSH port (default: 22)
+- `--help`: Show help information
+
+## Scripts
+
+The following npm scripts are available:
+
+- `npm start` - Run the application in production mode
+- `npm run dev` - Run the application in development mode
+- `npm run build` - Build standalone executable for Windows
+- `npm run build:all` - Build executables for all supported platforms
+- `npm run clean` - Clean build artifacts
+- `npm test` - Run tests (placeholder)
+
+## Building
+
+### Windows Executable
+
+To build a standalone Windows executable:
+
+```bash
+npm run build
+```
+
+The executable will be generated in the `dist/` directory as `ssh-portal.exe`.
+
+### Multi-platform Build
+
+To build for all supported platforms:
+
+```bash
+npm run build:all
+```
+
+This will generate executables for:
+- Windows (x64)
+- Linux (x64)
+- macOS (x64)
+
+## Configuration
+
+You can provide connection details in two ways:
+
+1. **CLI Parameters** (recommended for one-time use)
+2. **Configuration File** (`src/config-manager.js`)
+
+### Configuration File Format
+
+The configuration manager supports key-value pairs:
+
+```
+host=example.com
+user=admin
+password=changeme
+port=22
+```
+
+**Security Note:** The default password in configuration is `changeme` - change it before production use!
+
+## Requirements
+
+- Node.js >= 20.0.0
+- SSH access to target servers
+- For Windows builds: Windows 10 or later
+
+## Dependencies
+
+- `ssh2` - SSH2 client for Node.js
+- `yargs` - Command line argument parsing
+- `fs-extra` - Enhanced file system operations
+
+## Development Dependencies
+
+- `pkg` - Package Node.js applications into executables
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Security
+
+- Always use secure passwords and consider key-based authentication
+- Keep your SSH credentials secure and never commit them to version control
+- Regularly update dependencies to patch security vulnerabilities
+
+## Support
+
+For support, issues, or feature requests, please open an issue on GitHub.
 ### File Transfer
 ```bash
 ssh-portal --transfer local_file.txt /home/user/remote_file.txt

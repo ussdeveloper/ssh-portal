@@ -2,3 +2,8 @@ node_modules/
 .ssh-portal/
 .env
 *.log
+dist/
+build/
+temp/
+.DS_Store
+Thumbs.db

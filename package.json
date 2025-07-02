@@ -8,26 +8,42 @@
   },
   "scripts": {
     "start": "node src/index.js",
-    "build": "pkg . --target node18-win-x64 --output dist/ssh-portal.exe",
     "dev": "node src/index.js",
-    "test": "echo \"No tests specified\" && exit 0"
+    "build": "npm run clean && pkg . --target node18-win-x64 --output dist/ssh-portal.exe",
+    "build:all": "npm run clean && pkg . --targets node18-win-x64,node18-linux-x64,node18-macos-x64 --out-path dist",
+    "clean": "rimraf dist",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "echo \"No linter configured\" && exit 0",
+    "prepack": "npm run build"
   },
-  "keywords": ["ssh", "terminal", "remote", "command", "portal"],
+  "keywords": [
+    "ssh",
+    "terminal",
+    "remote",
+    "command",
+    "portal"
+  ],
   "author": "Developer",
   "license": "MIT",
   "dependencies": {
+    "fs-extra": "^11.2.0",
     "ssh2": "^1.15.0",
-    "yargs": "^17.7.2",
-    "fs-extra": "^11.2.0"
+    "yargs": "^17.7.2"
   },
   "devDependencies": {
-    "pkg": "^5.8.1"
+    "pkg": "^5.8.1",
+    "rimraf": "^5.0.10"
   },
   "pkg": {
     "targets": [
-      "node18-win-x64"
+      "node18-win-x64",
+      "node18-linux-x64",
+      "node18-macos-x64"
     ],
-    "outputPath": "dist"
+    "outputPath": "dist",
+    "assets": [
+      "src/**/*"
+    ]
   },
   "engines": {
     "node": ">=20.0.0"
