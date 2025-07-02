@@ -1,14 +1,22 @@
 # SSH Portal
 
-A command-line tool for executing commands on remote SSH servers.
-
-## Installation
-
-```bash
-npm install
-```
-
-# SSH Portal
+> **⚠️ EXPERIMENTAL SOFTWARE - USE WITH EXTREME CAUTION ⚠️**
+> 
+> **IMPORTANT DISCLAIMER:**
+> - **DO NOT USE ON PRODUCTION SYSTEMS** - This software is experimental and designed for testing/development environments only
+> - **AI INTEGRATION RISKS** - When used with AI assistants or copilots, there is significant risk of unintended command execution
+> - **NO RESPONSIBILITY** - The authors take NO RESPONSIBILITY for any damage, data loss, or system failures caused by this software or AI actions
+> - **USE AT YOUR OWN RISK** - You are solely responsible for any consequences of using this tool on your servers
+> - **SECURITY WARNING** - AI systems may execute unpredictable commands - always use isolated test environments
+> - **NOT FOR CRITICAL SYSTEMS** - Never use this tool on systems containing important data or production services
+> 
+> **Recommended Use Cases ONLY:**
+> - Local development servers
+> - Isolated test environments
+> - Throwaway virtual machines
+> - Educational purposes
+> 
+> By using this software, you acknowledge these risks and agree that you use it entirely at your own discretion and responsibility.
 
 A powerful CLI tool for executing commands on remote servers via SSH. Streamlines remote server management with support for multiple connections and automated administrative tasks.
 
@@ -115,7 +123,25 @@ port=22
 
 ## AI Assistant & Copilot Integration
 
-SSH Portal is designed to work seamlessly with AI assistants and development copilots, making it an excellent tool for automated server management and deployment tasks.
+> **⚠️ CRITICAL WARNING FOR AI INTEGRATION ⚠️**
+> 
+> **EXTREME CAUTION REQUIRED:**
+> - AI systems can execute DESTRUCTIVE commands without human oversight
+> - NEVER allow AI access to production servers or systems with valuable data
+> - AI may misinterpret instructions and execute harmful commands
+> - Always use ISOLATED, DISPOSABLE test environments only
+> - Monitor ALL AI actions closely and be prepared to interrupt
+> - Consider AI actions as POTENTIALLY DANGEROUS and unpredictable
+> 
+> **ONLY use AI integration in:**
+> - Completely isolated virtual machines
+> - Docker containers that can be destroyed
+> - Local development environments with no important data
+> - Test servers that can be rebuilt from scratch
+> 
+> **You have been warned - proceed with extreme caution!**
+
+SSH Portal is designed to work seamlessly with AI assistants and development copilots, making it an excellent tool for automated server management and deployment tasks **in safe, isolated environments only**.
 
 ### 🤖 **AI Agent Integration**
 
@@ -195,18 +221,33 @@ ssh-portal --host problematic-server --user admin --password pass "netstat -tlnp
 
 ### 🔒 **Security for AI Integration**
 
-- **Isolated Testing** - Use for development and testing environments
+> **MANDATORY SECURITY REQUIREMENTS:**
+> - **NEVER use on production systems** - AI can cause irreversible damage
+> - **Test environments ONLY** - Use disposable VMs or containers
+> - **Human supervision REQUIRED** - Never let AI run unsupervised
+> - **Backup everything** - Assume AI will break things
+
+- **Isolated Testing** - Use ONLY for development and testing environments
 - **Limited Privileges** - Create dedicated users with minimal required permissions
 - **Session Logging** - Use `--log` option to track all AI-executed commands
 - **Configuration Management** - Store connection details in config files for consistency
+- **Immediate Termination** - Be ready to kill processes if AI goes wrong
 
 ### 💡 **Best Practices for AI Usage**
+
+> **CRITICAL SAFETY RULES:**
+> - **ASSUME AI WILL MAKE MISTAKES** - Plan for disaster recovery
+> - **NEVER trust AI completely** - Verify every critical operation
+> - **USE ONLY DISPOSABLE SYSTEMS** - Nothing you can't afford to lose
 
 1. **Validate Commands** - AI should verify command syntax before execution
 2. **Error Handling** - Implement proper error checking and recovery mechanisms  
 3. **Logging** - Always log AI interactions for debugging and audit purposes
 4. **Incremental Deployment** - Break complex tasks into smaller, verifiable steps
 5. **Rollback Procedures** - Have rollback commands ready for critical operations
+6. **Human Oversight** - NEVER let AI operate completely autonomously
+7. **Backup Strategy** - Backup everything before AI operations
+8. **Kill Switch** - Have immediate way to stop AI operations
 
 ## Requirements
 
@@ -238,9 +279,16 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Security
 
+> **⚠️ SECURITY WARNING ⚠️**
+> This is experimental software with AI integration capabilities. Use extreme caution:
+
+- **NEVER use on production systems** - Risk of data loss and system damage
+- **Test environments only** - Use isolated, disposable systems
 - Always use secure passwords and consider key-based authentication
 - Keep your SSH credentials secure and never commit them to version control
 - Regularly update dependencies to patch security vulnerabilities
+- **Monitor AI actions closely** - AI can execute unexpected commands
+- **No warranty or liability** - Use entirely at your own risk
 
 ## Support
 
