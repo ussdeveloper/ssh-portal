@@ -8,10 +8,10 @@ class ConfigManager {
 
   async createTemplate() {
     const template = `# SSH Portal Configuration File
-host=10.3.0.213
+host=example.com
 port=22
-user=sulaco
-password=changeme
+user=username
+password=password
 auto_accept_cert=true`;
 
     await fs.writeFile(this.configPath, template, 'utf8');
