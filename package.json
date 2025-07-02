@@ -14,7 +14,11 @@
     "clean": "rimraf dist",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "echo \"No linter configured\" && exit 0",
-    "prepack": "npm run build"
+    "prepack": "npm run build",
+    "release": "node scripts/release.js",
+    "release:patch": "npm run release patch",
+    "release:minor": "npm run release minor", 
+    "release:major": "npm run release major"
   },
   "keywords": [
     "ssh",
