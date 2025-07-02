@@ -1,6 +1,0 @@
-# SSH Portal Configuration File
-host=10.3.0.213
-port=22
-user=sulaco
-password=7beber
-auto_accept_cert=true

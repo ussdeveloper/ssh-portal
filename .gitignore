@@ -1,5 +1,5 @@
 node_modules/
-.ssh-portal/
+.ssh-portal
 .env
 *.log
 dist/
@@ -7,3 +7,5 @@ build/
 temp/
 .DS_Store
 Thumbs.db
+test-*.txt
+test.log

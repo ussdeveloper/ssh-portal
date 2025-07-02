@@ -1,3 +1,0 @@
-Test file for SSH Portal transfer functionality.
-Created on: July 2, 2025
-This file will be transferred to the remote server.
