@@ -8,47 +8,47 @@ A command-line tool for executing commands on remote SSH servers.
 npm install
 ```
 
-## Build Executable
+# SSH Portal
 
-```bash
-npm run build
-```
+SSH Portal to narzędzie CLI umożliwiające wykonywanie poleceń na zdalnych serwerach przez SSH. Pozwala na szybkie zarządzanie wieloma połączeniami i automatyzację zadań administracyjnych.
 
-This will create `ssh-portal.exe` in the `dist` folder.
+## Funkcje
+- Wykonywanie poleceń na zdalnych hostach przez SSH
+- Obsługa wielu połączeń i konfiguracji
+- Prosta konfiguracja przez plik lub parametry CLI
+- Możliwość budowania aplikacji do postaci binarnej (Windows)
 
-## Usage
+## Szybki start
+1. Zainstaluj zależności:
+   ```bash
+   npm install
+   ```
+2. Uruchom narzędzie:
+   ```bash
+   npm start -- --host <host> --user <user> --password <haslo> [--port <port>]
+   ```
+3. Zbuduj wersję binarną (Windows):
+   ```bash
+   npm run build
+   ```
+   Plik wykonywalny pojawi się w katalogu `dist/`.
 
-### Basic Usage
-```bash
-ssh-portal "pwd"
-ssh-portal "ls -la"
-```
+## Skrypty npm
+- `npm start` – uruchamia aplikację w trybie produkcyjnym
+- `npm run dev` – uruchamia aplikację w trybie deweloperskim
+- `npm run build` – buduje aplikację do pliku EXE (Windows, wymaga `pkg`)
 
-### Create Configuration File
-```bash
-ssh-portal --create-config
-```
+## Konfiguracja
+Możesz podać dane połączenia przez parametry CLI lub plik konfiguracyjny (`src/config-manager.js`).
 
-### Using Custom Configuration
-```bash
-ssh-portal --config my-config.conf "whoami"
-```
+**Uwaga:** Domyślne hasło w konfiguracji to `changeme` – zmień je przed użyciem w środowisku produkcyjnym!
 
-### Command Line Parameters
-```bash
-ssh-portal --host 10.3.0.213 --user sulaco --password mypass "uptime"
-```
+## Wymagania
+- Node.js >= 20
+- Windows (dla wersji EXE)
 
-### Logging Output
-```bash
-ssh-portal --log session.log "df -h"
-```
-
-### Verbose Mode
-```bash
-ssh-portal --verbose "systemctl status nginx"
-```
-
+## Licencja
+MIT
 ### File Transfer
 ```bash
 ssh-portal --transfer local_file.txt /home/user/remote_file.txt
